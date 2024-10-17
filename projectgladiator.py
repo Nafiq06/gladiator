@@ -1,4 +1,3 @@
-
 import random
 print("Hej! du heter gladiatorn blue och du ska strida med gladiatorn red den som vinner får byns kärlek.")
 print("Just nu har ni på er svärd och tjock rustning eftersom er kejsare har sagt till er att ni kommer bli rika")
@@ -33,3 +32,32 @@ while running:
         running = False
 
 print("Thanks for playing!")
+
+print("now you're playing as gladiator red and you're gonna fight against gladiator blue how will you suvive")
+options = ("punch", "jab", "grab")
+running = True
+
+while running:
+
+    player = None
+    computer = random.choice(options)
+
+    while player not in options:
+        player = input("Enter a choice (punch, jab, grab): ")
+
+    print(f"Player: {player}")
+    print(f"Computer: {computer}")
+
+    if player == computer:
+        print("It's a tie!")
+    elif player == "punch" and computer == "grab":
+        print("You win!")
+    elif player == "jab" and computer == "punch":
+        print("You win!")
+    elif player == "grab" and computer == "jab":
+        print("You won and earned the villigers trust and earned their respect!!")
+    else:
+        print("You died!")
+
+    if not input("Spela igen? (y/n): ").lower() == "y":
+        running = False
